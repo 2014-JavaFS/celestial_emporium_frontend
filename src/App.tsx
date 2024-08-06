@@ -1,5 +1,6 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
+import { Container } from 'react-bootstrap'
 import Home from './pages/home/Home'
 import Nav from './components/nav/Nav'
 import Footer from './components/footer/Footer'
