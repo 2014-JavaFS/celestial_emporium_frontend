@@ -1,0 +1,30 @@
+/* Style for the entire table */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures that borders between cells are merged */
+  }
+  
+  /* Style for table headers */
+  th {
+    background-color: #f4f4f4; /* Light grey background for header cells */
+    border: 1px solid #ddd; /* Light grey border */
+    padding: 10px; /* Space inside each header cell */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Style for table data cells */
+  td {
+    border: 1px solid #ddd; /* Light grey border */
+    padding: 10px; /* Space inside each data cell */
+  }
+  
+  /* Alternate row colors for better readability */
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light grey background for even rows */
+  }
+  
+  /* Style for the table container (optional) */
+  .table-container {
+    overflow-x: auto; /* Adds horizontal scroll if the table overflows */
+    margin: 20px 0; /* Margin around the table */
+  }
