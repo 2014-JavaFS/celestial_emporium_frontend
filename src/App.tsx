@@ -7,21 +7,21 @@ import Footer from "./components/footer/Footer";
 import Login from "./pages/login/Login";
 import Profile from "./pages/profile/Profile";
 import Checkout from "./pages/checkout/Checkout";
+import AllCartItems from "./components/cart/Cart";
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <Container>
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/profile" element={<Profile />}></Route>
-            <Route path="/checkout" element={<Checkout />}></Route>
-          </Routes>
-        </main>
-      </Container>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/checkout" element={<Checkout />}></Route>
+        </Routes>
+        <AllCartItems />
+      </main>
       <Footer />
     </div>
   );
