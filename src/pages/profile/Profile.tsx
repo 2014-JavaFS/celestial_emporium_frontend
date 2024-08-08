@@ -4,7 +4,7 @@ import UserProfile from '../../components/profile/profile';
 function Profile() {
     return (
         <main>
-            <UserProfile userIdNumber={1} />
+            <UserProfile userIdNumber={1} currentUserIdNumber={1}/>
         </main>           
 
     )
