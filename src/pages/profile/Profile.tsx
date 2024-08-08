@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 function Profile() {
 
     const [userId, setUserId] = useState(0);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const token = localStorage.getItem('jwt');
@@ -19,9 +21,11 @@ function Profile() {
                     console.log(decodedToken)
                 }
             }
-
+            setLoading(false);
         }
     }, [])
+    if(loading) return <div>Loading...</div>
+
     return (
         <main>
             <UserProfile userIdNumber={userId} />
