@@ -1,11 +1,9 @@
-Container styling
 .login-container {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
 }
 .form-container {
     max-width: 600px; /* Sets a maximum width for the form */

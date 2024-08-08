@@ -1,3 +1,5 @@
+
+import Register from './pages/register/Register'
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Container } from "react-bootstrap";
@@ -7,6 +9,7 @@ import Footer from "./components/footer/Footer";
 import Login from "./pages/login/Login";
 import Profile from "./pages/profile/Profile";
 import Checkout from "./pages/checkout/Checkout";
+
 
 function App() {
   return (
@@ -19,6 +22,7 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/checkout" element={<Checkout />}></Route>
+            <Route path="/register" element={<Register/>}></Route>
           </Routes>
         </main>
       </Container>
