@@ -1,10 +1,3 @@
-.login-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .form-container {
     max-width: 600px; /* Sets a maximum width for the form */
     margin: 0 auto; /* Centers the form horizontally */
@@ -12,11 +5,14 @@
     background: #2e2e2e;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+    gap: 1em; /* Adds space between grid items */
   }
   
   /* Header styling */
   .form-container h2 {
+    grid-column: span 2; /* Makes the header span both columns */
     margin-bottom: 1em;
     font-size: 1.5em;
     text-align: center;
@@ -27,6 +23,18 @@
     margin-bottom: 1em;
   }
   
+  .form-group.center {
+    grid-column: 1 / -1; /* Centers the form group */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;/* Centers the content horizontally */
+  }
+  
+  .form-group.center textarea {
+    width: 100%; /* Adjust the width as needed */
+  }
+  
   /* Label styling */
   .form-group label {
     display: block;
@@ -35,22 +43,18 @@
   }
   
   /* Input and textarea styling */
-  .form-group input,
-  .form-group textarea {
+  .form-group input {
     width: 100%; /* Makes the input and textarea span the full width of the container */
     padding: 0.8em;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1em;
   }
-  
-  /* Textarea specific styling */
-  .form-group textarea {
-    resize: vertical; /* Allows vertical resizing */
-  }
+
   
   /* Button styling */
   button {
+    grid-column: span 2; /* Makes the button span both columns */
     display: block;
     width: 100%; /* Makes the button span the full width of the container */
     padding: 0.8em;
