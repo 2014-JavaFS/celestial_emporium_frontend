@@ -1,9 +1,10 @@
 import './Profile.css'
+import UserProfile from '../../components/profile/profile';
 
 function Profile() {
     return (
         <main>
-            <h1>Hello, this is the profile page</h1>
+            <UserProfile userIdNumber={1} />
         </main>           
 
     )
