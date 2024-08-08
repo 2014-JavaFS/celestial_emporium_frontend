@@ -1,9 +1,11 @@
+Container styling
 .login-container {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: blue;
 }
 .form-container {
     max-width: 600px; /* Sets a maximum width for the form */
@@ -12,28 +14,28 @@
     background: #2e2e2e;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+   
   }
-  
+ 
   /* Header styling */
   .form-container h2 {
     margin-bottom: 1em;
     font-size: 1.5em;
     text-align: center;
   }
-  
+ 
   /* Form group styling */
   .form-group {
     margin-bottom: 1em;
   }
-  
+ 
   /* Label styling */
   .form-group label {
     display: block;
     margin-bottom: 0.5em;
     font-weight: bold;
   }
-  
+ 
   /* Input and textarea styling */
   .form-group input,
   .form-group textarea {
@@ -43,12 +45,12 @@
     border-radius: 4px;
     font-size: 1em;
   }
-  
+ 
   /* Textarea specific styling */
   .form-group textarea {
     resize: vertical; /* Allows vertical resizing */
   }
-  
+ 
   /* Button styling */
   button {
     display: block;
@@ -62,7 +64,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
+ 
   button:hover {
     background-color: #0056b3;
   }

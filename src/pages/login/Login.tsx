@@ -23,6 +23,7 @@ function Login() {
             })
             if (response.ok) {
                 console.log('success')
+                console.log(response.json())
             } else {
                 console.log('error')
             }
