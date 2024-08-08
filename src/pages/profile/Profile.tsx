@@ -28,7 +28,7 @@ function Profile() {
 
     return (
         <main>
-            <UserProfile userIdNumber={userId} />
+            <UserProfile userIdNumber={userId} currentUserIdNumber={userId}/>
         </main>           
 
     )
