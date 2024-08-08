@@ -1,9 +1,10 @@
+import CheckoutForm from '../../components/checkout-form/CheckoutForm';
 import './Checkout.css'
 
 function Checkout() {
     return (
         <main>
-            <h1>Hello, this is the checkout page</h1>
+            <CheckoutForm/>
         </main>           
 
     )
