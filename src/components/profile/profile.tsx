@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { DEFAULT_MIN_BREAKPOINT } from 'react-bootstrap/esm/ThemeProvider';
 
 interface UserProfile {
     profileId: number;
@@ -28,7 +27,6 @@ const UserProfile: React.FC<UserProfileProps> = ({userIdNumber, currentUserIdNum
     useEffect(() => {
         const fetchUserProfile = async () => {
             try {
-                // Assuming you have an endpoint like '/api/user/profile' for getting the logged-in user's profile
                 const response = await axios.get<UserProfile>(`http://localhost:8080/profiles/${userIdNumber}`);
                 setProfile(response.data);
                 setFormData(response.data);
@@ -75,12 +73,10 @@ const UserProfile: React.FC<UserProfileProps> = ({userIdNumber, currentUserIdNum
         {isEditing && profile && currentUserIdNumber === userIdNumber ? (
             
             <form onSubmit={handleSubmit}>
-                {/* <p><strong>First Name:</strong> {profile?.firstName}</p>
-                <p><strong>Last Name:</strong> {profile?.lastName}</p> */}
                 <label>First Name: 
                     <input 
                         type="text" 
-                        name="firstName" 
+                        name="firstName"
                         value={formData?.firstName || ''} 
                         onChange={handleChange}
                     />
@@ -160,18 +156,6 @@ const UserProfile: React.FC<UserProfileProps> = ({userIdNumber, currentUserIdNum
             </div>
 
         )}
-        {/* <div className="user-profile">
-            {profile ? (
-                <div className="profile-details">
-                    <h1>{profile.firstName}'s Profile</h1>
-                    <p><strong>Full Name:</strong> {profile.firstName} {profile.lastName}</p>
-                    <p><strong>Class:</strong> {profile.playerClass}</p>
-                    <p><strong>Background:</strong> {profile.background}</p>
-                </div>
-            ) : (
-                <p>User not found</p>
-            )}
-        </div> */}
         </div>
         </>
         

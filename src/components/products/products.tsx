@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ItemInformation from '../item/item';
-import Profile from '../profile/profile';
 
 interface Inventory {
     inventoryId: number;
@@ -74,7 +73,6 @@ const ProductList: React.FC = () => {
                                  {product.item.name}
                                 </a></td>
                             <td>{product.price} CP</td>
-                            {/* <td>{product.quantity}</td> */}
                             <td>
                                 <input type="number" id='quantity' name='quantity' min='0' max={product.quantity} />
                             </td>
