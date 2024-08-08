@@ -1,4 +1,4 @@
-.form-container {
+.form-container-register {
     max-width: 600px; /* Sets a maximum width for the form */
     margin: 0 auto; /* Centers the form horizontally */
     padding: 1em;
@@ -11,7 +11,7 @@
   }
   
   /* Header styling */
-  .form-container h2 {
+  .form-container-register h2 {
     grid-column: span 2; /* Makes the header span both columns */
     margin-bottom: 1em;
     font-size: 1.5em;
