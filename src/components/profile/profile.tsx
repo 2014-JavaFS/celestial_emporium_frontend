@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import axios from 'axios';
 
 interface UserProfile {
@@ -17,7 +18,9 @@ interface UserProfileProps {
     currentUserIdNumber: number;
 }
 
+
 const UserProfile: React.FC<UserProfileProps> = ({userIdNumber, currentUserIdNumber}) => {
+
     const [profile, setProfile] = useState<UserProfile | null>(null);
     const [isEditing, setIsEditing] = useState<boolean>(false);
     const [formData, setFormData] = useState<UserProfile | null>(null);
@@ -163,3 +166,4 @@ const UserProfile: React.FC<UserProfileProps> = ({userIdNumber, currentUserIdNum
 };
 
 export default UserProfile;
+
