@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import axios from 'axios';
 
 interface UserProfile {
@@ -15,6 +16,7 @@ interface UserProfile {
 interface ProfileProps {
     userIdNumber: number;
 }
+
 
 const UserProfile: React.FC<ProfileProps> = ({userIdNumber}) => {
     const [profile, setProfile] = useState<UserProfile | null>(null);
@@ -57,3 +59,4 @@ const UserProfile: React.FC<ProfileProps> = ({userIdNumber}) => {
 };
 
 export default UserProfile;
+
