@@ -23,7 +23,10 @@ function Login() {
             })
             if (response.ok) {
                 console.log('success')
-                console.log(response.json())
+                const data = await response.json()
+                console.log(data.accessToken)
+                localStorage.setItem('jwt', data.accessToken)
+                console.log(localStorage.getItem('jwt'))
             } else {
                 console.log('error')
             }
