@@ -5,9 +5,11 @@ import {useEffect, useState} from 'react'
 import { useCart } from '../../context/CartContext';
 import AllCartItems from '../../components/cart/Cart';
 import parseJwt from '../../util/parseJwt';
+import { useNavigate } from 'react-router-dom';
 
 function Checkout() {
     const [userId, setUserId] = useState(0)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const token = localStorage.getItem('jwt');
@@ -32,6 +34,7 @@ function Checkout() {
         .then((data) => {
             console.log(data)
             clearCart()
+            navigate("/")
         })
         .catch((error) => console.log(error))
     }

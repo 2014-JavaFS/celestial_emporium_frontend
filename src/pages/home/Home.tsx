@@ -1,15 +1,13 @@
-import './Home.css'
-import Product from '../../components/product/product';
-import Products from '../../components/products/products';
+import "./Home.css";
+import Product from "../../components/product/product";
+import Products from "../../components/products/products";
 
 function Home() {
-    return (
-        <main>
-            <h1>Hello, this is the home page</h1>
-            <Products/>
-        </main>           
-
-    )
+  return (
+    <main>
+      <Products />
+    </main>
+  );
 }
 
 export default Home;
