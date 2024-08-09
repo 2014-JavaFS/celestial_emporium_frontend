@@ -42,9 +42,6 @@ export default function CartItem({ id, quantity, name, price }: cartProps) {
               </button>
             </div>
           </div>
-          <Link to="/checkout" className="checkout-button">
-            Checkout
-          </Link>
         </div>
       );
     }
