@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CartItem from "../cartitem/CartItem";
+import parseJwt from "../../util/parseJwt";
 
 interface cartInterface {
   id: number;
@@ -12,7 +13,24 @@ interface cartInterface {
 
 export default function AllCartItems() {
   const [cartItems, setCartItems] = useState([]);
-  const userId = 1; // Replace with the actual user ID from your authentication context or props
+  const [userId, setUserId] = useState(0);
+  // const userId = 1; // Replace with the actual user ID from your authentication context or props
+
+  useEffect(() => {
+    const token = localStorage.getItem('jwt');
+    if(token) {
+        const decodedToken = parseJwt(token)
+        if (decodedToken) {
+            const decodedToken = parseJwt(token);
+            if (decodedToken) {
+                decodedToken.userId;
+                setUserId(decodedToken.userId)
+                console.log(decodedToken)
+            }
+        }
+
+    }
+}, [])
 
   useEffect(() => {
     fetch(`http://localhost:8080/cart-items/${userId}`, {

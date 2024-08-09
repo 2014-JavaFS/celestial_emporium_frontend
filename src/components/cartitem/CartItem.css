@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 16px;
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -18,12 +18,26 @@
     font-size: 18px;
     color: #ffffff;
     font-weight: bold;
+    flex: 3;
+    padding-right: 100px;
+    white-space: nowrap;
+}
+
+.cart-item .quantity {
+    font-size: 14px;
+    color: #cccccc;
+    flex: 1; 
+    padding-left: 20px; 
 }
 
 .cart-item .price {
     font-size: 18px;
     font-weight: bold;
-    color: #333333;
+    color: #ffffff;
+    flex: 1; /* Keep less space for the price */
+    text-align: right; /* Align price to the right */
+    padding-right: 40px;
+    white-space: nowrap;
 }
 
 .total-price {
@@ -49,4 +63,3 @@
 .checkout-button:hover {
     background-color: #45a049;
 }
-

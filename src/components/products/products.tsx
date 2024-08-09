@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ItemInformation from '../item/item';
+import parseJwt from '../../util/parseJwt';
 
 interface Inventory {
     inventoryId: number;
@@ -27,6 +28,7 @@ const ProductList: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
     const [cartId, setCartId] = useState<number>(1);
+    const [userId, setUserId] = useState(0);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -39,6 +41,19 @@ const ProductList: React.FC = () => {
                 setLoading(false);
             }
         };
+        const token = localStorage.getItem('jwt');
+        if(token) {
+            const decodedToken = parseJwt(token)
+            if (decodedToken) {
+                const decodedToken = parseJwt(token);
+                if (decodedToken) {
+                    decodedToken.userId;
+                    setUserId(decodedToken.userId)
+                    console.log(decodedToken)
+                }
+            }
+    
+        }
         fetchProducts();
     }, []);
 
@@ -52,7 +67,7 @@ const ProductList: React.FC = () => {
         try {
             const cartItem = {
                 cart: { cartId: cartId },
-                user: { userIdNumber: product.user.userIdNumber },
+                user: { userIdNumber: userId },
                 item: { itemId: product.item.itemId },
                 quantity: quantity,
                 price: product.price,
