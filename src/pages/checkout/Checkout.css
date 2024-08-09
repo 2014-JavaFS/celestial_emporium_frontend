@@ -9,8 +9,8 @@ main {
     padding: 20px; /* Optional: Background color for better visibility */
 }
 
-h5, p {
-    margin: 10px 0; /* Add margin for spacing */
+h1, p {
+    margin: 20px 0; /* Add margin for spacing */
 }
 
 a {

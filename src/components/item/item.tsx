@@ -40,7 +40,7 @@ const ItemInformation: React.FC<ItemInformationProps> = ({ itemId }) => {
             {itemInformation ? (
                 <div>
                     <h2>{itemInformation.name}</h2>
-                    <img src={itemInformation.image} alt={itemInformation.name} />
+                    <img src={itemInformation.image} alt={itemInformation.name} width={"250px"} height={"250px"}/>
                     <p>{itemInformation.description}</p>
                 </div>
             ) : (

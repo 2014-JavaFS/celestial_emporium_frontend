@@ -65,7 +65,7 @@ function App() {
           </Routes>
         </main>
       </Container>
-      <Footer />
+      {/* <Footer /> */}
     </div>
     </CartProvider>
   );

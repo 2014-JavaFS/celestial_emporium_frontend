@@ -11,10 +11,7 @@ const CheckoutForm = () => {
 
     return (
         <form className="form-container" onSubmit={handleSubmit}>
-                <h2>Checkout</h2>
                 <PaymentElement/>
-                
-                <button type="submit">checkout</button>
             </form>
     )
 }
