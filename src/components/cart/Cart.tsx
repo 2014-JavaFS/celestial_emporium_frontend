@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CartItem from "../cartitem/CartItem";
 import parseJwt from "../../util/parseJwt";
-import { useCart } from "../../context/CartContext"
+import { useCart } from "../../context/CartContext";
 
 interface cartInterface {
   id: number;
@@ -16,23 +16,21 @@ export default function AllCartItems() {
   const [cartItems, setCartItems] = useState([]);
   const [userId, setUserId] = useState(0);
   const { items, addToCart } = useCart();
-  // const userId = 1; // Replace with the actual user ID from your authentication context or props
 
   useEffect(() => {
-    const token = localStorage.getItem('jwt');
-    if(token) {
-        const decodedToken = parseJwt(token)
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      const decodedToken = parseJwt(token);
+      if (decodedToken) {
+        const decodedToken = parseJwt(token);
         if (decodedToken) {
-            const decodedToken = parseJwt(token);
-            if (decodedToken) {
-                decodedToken.userId;
-                setUserId(decodedToken.userId)
-                console.log(decodedToken)
-            }
+          decodedToken.userId;
+          setUserId(decodedToken.userId);
+          console.log(decodedToken);
         }
-
+      }
     }
-}, [])
+  }, []);
 
   useEffect(() => {
     fetch(`http://localhost:8080/cart-items/${userId}`, {
@@ -43,8 +41,8 @@ export default function AllCartItems() {
     })
       .then((response) => response.json())
       .then((data) => {
-       // setCartItems(data);
-       addToCart(data); 
+        // setCartItems(data);
+        addToCart(data);
 
         console.log(data);
       })
@@ -53,18 +51,26 @@ export default function AllCartItems() {
       });
   }, [userId]);
 
+  const calculateSubtotal = () => {
+    return items.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
   return (
-    <>
-      {items.map((cartItem: cartInterface) => {
-        return (
+    <div>
+      {items.length === 0 ? (
+        <p>Your cart is empty!</p>
+      ) : (
+        items.map((cartItem: cartInterface) => (
           <CartItem
+            key={cartItem.id}
             id={cartItem.id}
             name={cartItem.item.name}
             price={cartItem.price}
             quantity={cartItem.quantity}
           />
-        );
-      })}
-    </>
+        ))
+      )}
+      <div className="subtotal">Subtotal: {calculateSubtotal()} CP</div>
+    </div>
   );
 }

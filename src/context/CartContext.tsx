@@ -1,12 +1,12 @@
 import React, { createContext, useState, useContext, ReactNode } from "react";
 
 interface CartItem {
-    id: number;
-    quantity: number;
-    price: number;
-    item: {
-      name: string;
-    };
+  id: number;
+  quantity: number;
+  price: number;
+  item: {
+    name: string;
+  };
 }
 
 interface CartContextType {
@@ -58,7 +58,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
           newItems.forEach((item) => {
     const existingItem = updatedItems.find((i) => i.id === item.id);
     if (existingItem) {
-              existingItem.quantity += item.quantity;
+              existingItem.quantity = item.quantity;
             } else {
               updatedItems.push(item);
             }
