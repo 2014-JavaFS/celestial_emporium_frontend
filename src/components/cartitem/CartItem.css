@@ -1,22 +1,3 @@
-/* General page styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
-
-/* Container for the cart */
-.cart-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #110707af;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Header for the cart */
 .cart-header {
     font-size: 24px;
     font-weight: bold;
@@ -25,7 +6,6 @@ body {
     color: #333333;
 }
 
-/* Styling for each cart item */
 .cart-item {
     display: flex;
     justify-content: space-between;
@@ -34,29 +14,25 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
-/* Product name styling */
 .cart-item .product-name {
     font-size: 18px;
-    color: #555555;
+    color: #ffffff;
+    font-weight: bold;
 }
 
-/* Price styling */
 .cart-item .price {
     font-size: 18px;
     font-weight: bold;
     color: #333333;
 }
 
-/* Total price section */
 .total-price {
     text-align: right;
     font-size: 22px;
     font-weight: bold;
-    color: #333333;
     margin-top: 20px;
 }
 
-/* Checkout button */
 .checkout-button {
     display: block;
     width: 100%;
@@ -73,3 +49,4 @@ body {
 .checkout-button:hover {
     background-color: #45a049;
 }
+
