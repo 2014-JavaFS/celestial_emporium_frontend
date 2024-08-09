@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CartItem from "../cartitem/CartItem";
 import parseJwt from "../../util/parseJwt";
 import { useCart } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 interface cartInterface {
   id: number;
@@ -71,6 +72,9 @@ export default function AllCartItems() {
         ))
       )}
       <div className="subtotal">Subtotal: {calculateSubtotal()} CP</div>
+      <Link to="/checkout" className="checkout-button">
+            Checkout
+          </Link>
     </div>
   );
 }
