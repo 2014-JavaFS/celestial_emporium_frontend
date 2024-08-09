@@ -1,18 +1,34 @@
+/* Nav.css */
+
 .menu {
     background-color: aliceblue;
     width: 100%;
-    margin: 0;
-    padding-left: 1rem;
+    padding: 1rem 2rem; /* Adjust padding to make the bar bigger */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
 }
+
 .menu ul {
     display: flex;
-    flex-direction: row;
-    justify-content: left;
+    justify-content: space-around; /* Center items with equal spacing */
     padding: 0;
-    list-style-type: none;
     margin: 0;
+    list-style-type: none;
 }
 
 .menu li {
-    margin-right: 2rem;
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333; /* Default text color */
+    font-size: 1.2rem; /* Increase font size */
+    padding: 0.5rem 1rem; /* Add padding for bigger clickable area */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition */
+    border-radius: 5px; /* Rounded corners for the buttons */
+}
+
+.menu a:hover, .menu a:focus {
+    color: white;
+    background-color: #007bff; /* Blue accent for hover */
 }
