@@ -31,6 +31,7 @@ a:hover {
 html, body {
   height: 100%;
   width: 100%;
+  max-height: 100%;
   overflow-x: hidden;
   margin: 0;
 }

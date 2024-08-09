@@ -1,0 +1,72 @@
+.form-container-register {
+    max-width: 600px; /* Sets a maximum width for the form */
+    margin: 0 auto; /* Centers the form horizontally */
+    padding: 1em;
+    background: #2e2e2e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+    gap: 1em; /* Adds space between grid items */
+  }
+  
+  /* Header styling */
+  .form-container-register h2 {
+    grid-column: span 2; /* Makes the header span both columns */
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 1em;
+  }
+  
+  .form-group.center {
+    grid-column: 1 / -1; /* Centers the form group */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;/* Centers the content horizontally */
+  }
+  
+  .form-group.center textarea {
+    width: 100%; /* Adjust the width as needed */
+  }
+  
+  /* Label styling */
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  
+  /* Input and textarea styling */
+  .form-group input {
+    width: 100%; /* Makes the input and textarea span the full width of the container */
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+
+  
+  /* Button styling */
+  button {
+    grid-column: span 2; /* Makes the button span both columns */
+    display: block;
+    width: 100%; /* Makes the button span the full width of the container */
+    padding: 0.8em;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
