@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import './Login.css'
 import { useState } from 'react';
 
@@ -5,6 +6,7 @@ function Login() {
 
     const [email, setEmail] = useState<string>("")
     const [password, setPassword]  = useState<string>("")
+    const navigate = useNavigate();
 
 
     
@@ -27,6 +29,7 @@ function Login() {
                 console.log(data.accessToken)
                 localStorage.setItem('jwt', data.accessToken)
                 console.log(localStorage.getItem('jwt'))
+                navigate('/')
             } else {
                 console.log('error')
             }
