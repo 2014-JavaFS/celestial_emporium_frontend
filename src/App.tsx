@@ -9,9 +9,12 @@ import Footer from "./components/footer/Footer";
 import Login from "./pages/login/Login";
 import Profile from "./pages/profile/Profile";
 import Checkout from "./pages/checkout/Checkout";
+import AllCartItems from "./components/cart/Cart";
+import CartPage from "./pages/cartpage/CartPage";
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { useState, useEffect } from 'react';
+import { CartProvider } from './context/CartContext';
 
 const stripePromise = loadStripe('pk_test_51NlQzWG9MLiQo8RG4oST1Fywg4KXpa9ipTBWEX3FDrl2cqVvc2MBFVWaPZM9wJa9vKc5MPDBXVWLVrCeZfjjlhf400eqHsAz0x')
 
@@ -39,6 +42,7 @@ function App() {
   }, [])
 
   return (
+    <CartProvider>
     <div className="App">
       <Nav />
       <Container>
@@ -47,6 +51,7 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/cart" element={<CartPage />}></Route>
             <Route path="/checkout" element={
                 clientSecret ? (
                   <Elements stripe={stripePromise} options={{ clientSecret }}>
@@ -62,6 +67,7 @@ function App() {
       </Container>
       <Footer />
     </div>
+    </CartProvider>
   );
 }
 
