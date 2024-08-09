@@ -1,5 +1,29 @@
+
 main {
-    width: 100%;
-    margin: 1rem;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    min-height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text */
+    padding: 20px; /* Optional: Background color for better visibility */
+}
+
+h5, p {
+    margin: 10px 0; /* Add margin for spacing */
+}
+
+a {
+    color: #007bff; /* Link color */
+    cursor: pointer; /* Pointer cursor for links */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+button:hover {
+    background-color: #0056b3; /* Darker color on hover */
 }
