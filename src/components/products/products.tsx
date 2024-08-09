@@ -26,6 +26,7 @@ const ProductList: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
+    const [cartId, setCartId] = useState<number>(1);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -38,14 +39,32 @@ const ProductList: React.FC = () => {
                 setLoading(false);
             }
         };
-
-        
-
         fetchProducts();
     }, []);
 
     const handleItemClick = (itemId: number) => {
         setSelectedItemId(itemId);
+    };
+
+    const handleBuyClick = async (product: Inventory) => {
+        const quantity = parseInt((document.getElementById(`quantity-${product.inventoryId}`) as HTMLInputElement).value);
+
+        try {
+            const cartItem = {
+                cart: { cartId: cartId },
+                user: { userIdNumber: product.user.userIdNumber },
+                item: { itemId: product.item.itemId },
+                quantity: quantity,
+                price: product.price,
+                inventory: { inventoryId: product.inventoryId }
+            };
+
+            const response = await axios.post('http://localhost:8080/cart-items', cartItem);
+
+            console.log('Item added to cart:', response.data);
+        } catch (err) {
+            console.error('Error adding item to cart', err);
+        }
     };
 
     if (loading) return <p>Loading...</p>;
@@ -63,7 +82,6 @@ const ProductList: React.FC = () => {
                         <th>Quantity</th>
                         <th>Seller</th>
                         <th>Cart</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -72,20 +90,20 @@ const ProductList: React.FC = () => {
                             <td>{product.inventoryId}</td>
                             <td>
                                 <a href="#" onClick={() => handleItemClick(product.item.itemId)}>
-                                 {product.item.name}
-                                </a></td>
+                                    {product.item.name}
+                                </a>
+                            </td>
                             <td>{product.price} CP</td>
-                            {/* <td>{product.quantity}</td> */}
                             <td>
-                                <input type="number" id='quantity' name='quantity' min='0' max={product.quantity} />
+                                <input type="number" id={`quantity-${product.inventoryId}`} name='quantity' min='0' max={product.quantity} defaultValue={1} />
                             </td>
                             <td>{product.user.firstName} {product.user.lastName}</td>
-                            <td><button>Buy</button></td>
+                            <td><button onClick={() => handleBuyClick(product)}>Buy</button></td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            {selectedItemId && <ItemInformation itemId ={selectedItemId} />}
+            {selectedItemId && <ItemInformation itemId={selectedItemId} />}
         </div>
     );
 };
