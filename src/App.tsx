@@ -12,6 +12,7 @@ import Checkout from "./pages/checkout/Checkout";
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { useState, useEffect } from 'react';
+import { CartProvider } from './context/CartContext';
 
 const stripePromise = loadStripe('pk_test_51NlQzWG9MLiQo8RG4oST1Fywg4KXpa9ipTBWEX3FDrl2cqVvc2MBFVWaPZM9wJa9vKc5MPDBXVWLVrCeZfjjlhf400eqHsAz0x')
 
@@ -39,6 +40,7 @@ function App() {
   }, [])
 
   return (
+    <CartProvider>
     <div className="App">
       <Nav />
       <Container>
@@ -62,6 +64,7 @@ function App() {
       </Container>
       <Footer />
     </div>
+    </CartProvider>
   );
 }
 
