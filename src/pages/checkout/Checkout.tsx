@@ -55,7 +55,7 @@ function Checkout() {
             {payWithCard && <CheckoutForm/>}
             </div>
             
-            <button onClick={updateCartDB}>Checkout</button>
+            <button onClick={updateCartDB} style={{maxWidth:"500px"}}>Checkout</button>
         </main>           
 
     )
