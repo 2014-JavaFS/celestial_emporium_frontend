@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 import AllCartItems from "../../components/cart/Cart";
-import "./CartItem.css";
+import "../../components/cartitem/CartItem.css";
 
 export default function CartPage() {
   return (
     <>
       <AllCartItems />
-      <Link to="/checkout" className="checkout-button">
-            Checkout
-          </Link>
+      <Link
+        to="/checkout"
+        className="checkout-button"
+        style={{ maxWidth: "500px" }}
+      >
+        Checkout
+      </Link>
     </>
   );
 }
