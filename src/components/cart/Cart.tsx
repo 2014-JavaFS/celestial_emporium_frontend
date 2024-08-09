@@ -72,9 +72,7 @@ export default function AllCartItems() {
         ))
       )}
       <div className="subtotal">Subtotal: {calculateSubtotal()} CP</div>
-      <Link to="/checkout" className="checkout-button">
-            Checkout
-          </Link>
+
     </div>
   );
 }
