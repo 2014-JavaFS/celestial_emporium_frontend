@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CartItem from "../cartitem/CartItem";
 import parseJwt from "../../util/parseJwt";
+import { useCart } from "../../context/CartContext"
 
 interface cartInterface {
   id: number;
@@ -14,6 +15,7 @@ interface cartInterface {
 export default function AllCartItems() {
   const [cartItems, setCartItems] = useState([]);
   const [userId, setUserId] = useState(0);
+  const { items, addToCart } = useCart();
   // const userId = 1; // Replace with the actual user ID from your authentication context or props
 
   useEffect(() => {
@@ -41,7 +43,9 @@ export default function AllCartItems() {
     })
       .then((response) => response.json())
       .then((data) => {
-        setCartItems(data);
+       // setCartItems(data);
+       addToCart(data); 
+
         console.log(data);
       })
       .catch((err) => {
@@ -51,7 +55,7 @@ export default function AllCartItems() {
 
   return (
     <>
-      {cartItems.map((cartItem: cartInterface) => {
+      {items.map((cartItem: cartInterface) => {
         return (
           <CartItem
             key={cartItem.id}
