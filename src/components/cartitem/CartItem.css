@@ -63,3 +63,10 @@
 .checkout-button:hover {
     background-color: #45a049;
 }
+
+.subtotal {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: right;
+  }
