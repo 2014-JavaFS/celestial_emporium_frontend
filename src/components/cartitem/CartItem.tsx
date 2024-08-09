@@ -1,6 +1,7 @@
 import "./CartItem.css";
 import { useCart } from "../../context/CartContext"
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 interface cartProps {
   id: number;
@@ -27,18 +28,23 @@ export default function CartItem({ id, quantity, name, price }: cartProps) {
       };
 
       
-  return (
-    <div className="cart-container">
-      <div className="cart-box">
-        <div className="cart-item">
-          <div className="product-info">
-            <div className="product-name">{name}</div>
-            <div className="quantity">Qty: {quantity}</div>
+      return (
+        <div className="cart-container">
+          <div className="cart-box">
+            <div className="cart-item">
+              <div className="product-info">
+                <div className="product-name">{name}</div>
+                <div className="quantity">Qty: {quantity}</div>
+              </div>
+              <div className="price">{price} CP</div>
+              <button className="remove-button" onClick={handleRemoveClick}>
+                Remove
+              </button>
+            </div>
           </div>
-          <div className="price">{price} CP</div>
-          <button className="remove-button" onClick={handleRemoveClick}>Remove</button>
+          <Link to="/checkout" className="checkout-button">
+            Checkout
+          </Link>
         </div>
-      </div>
-    </div>
-  );
-}
+      );
+    }
