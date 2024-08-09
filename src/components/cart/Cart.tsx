@@ -58,7 +58,7 @@ export default function AllCartItems() {
       {items.map((cartItem: cartInterface) => {
         return (
           <CartItem
-            key={cartItem.id}
+            id={cartItem.id}
             name={cartItem.item.name}
             price={cartItem.price}
             quantity={cartItem.quantity}
